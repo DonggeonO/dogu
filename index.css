@@ -444,3 +444,8 @@ footer h1{
     font-family: "Londrina Shadow", sans-serif;
     color: rgb(0, 0, 0,0.5);
 }
+
+.banner_box:nth-child(2){
+    background-color: red;
+    background: url(https://www.naver.com/);
+}
