@@ -1,0 +1,446 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Noto+Sans+KR:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ruge+Boogie&family=Sixtyfour+Convergence&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Londrina+Shadow&family=Noto+Sans+KR:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ruge+Boogie&family=Sixtyfour+Convergence&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+li{
+    list-style: none;
+}
+
+/* body {
+    margin: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+} */
+
+
+/* 배너생성 */
+.banner{
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    /* background-color: red; */
+    margin: 0 auto;
+    top: 0;
+}
+.banner > article{
+    max-width: 90%;
+    /* background-color: yellow; */
+    margin: auto;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.logo{
+    height: 90px;
+    width: 190px;
+    line-height: 90px;
+    /* background-color: green; */
+}
+/* 폰트적용시킬자리 */
+.logo a span{
+    font-size: 60px;
+    font-weight: 900;
+    font-family: "Londrina Shadow", sans-serif;
+}
+.menu-container{
+    position: relative;
+}
+.menu {
+    display: flex;
+}
+.menu li a{
+    font-family: "Noto Sans KR", sans-serif;
+}
+.menu > li{
+    /* background-color: pink; */
+    height: 90px;
+    line-height: 90px;
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 50px;
+    /* margin-right: 10px; */
+    
+}
+.menu > li:first-child {
+    margin-left: 0;
+}
+.icons{
+    height: 90px;
+    /* background-color: blue; */
+    line-height: 90px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+.icons li a{
+    margin-left: 20px;
+    font-size: 30px;
+}
+.logo a h1{
+    font-size: 30px;
+}
+/* 마우스가 클릭했을때 효과. */
+.top > .logo:hover{
+    text-shadow: 5px 5px hotpink;
+}
+.top > .logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 5px;
+    background-color: pink;
+    transform: scale(0);
+    transition: transform 0.3s;
+}
+    .top:hover > .logo::after {
+    transform: scale(1);
+}
+.logo a:hover{
+    color: pink;
+    
+}
+.menu li a:hover{
+    color: pink;
+    text-shadow: 3px 3px hotpink;
+}
+.icons > li:first-child:hover{
+    color: pink;
+    text-shadow: 3px 3px hotpink;
+}
+.icons > li:last-child:hover{
+    color: pink;
+    text-shadow: 3px 3px hotpink;
+}
+
+
+
+
+/* 게시판 제목 생성 */
+
+.content{
+    width: 100%;
+    max-width: 80%;
+    margin: 150px auto;
+    /* background-color: beige; */
+}
+.dong{
+    text-align: center;
+    font-size: 40px;
+    /* background-color: blueviolet; */
+    margin: 50px auto;
+    font-family: "Londrina Shadow", sans-serif;
+}
+/* 게시판 보기수량설정  */
+.number{
+    width: 100%;
+    max-width: 80%;
+    margin: 10px auto;   
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+}
+.number select{
+    width: 100px;
+    height: 50px;
+    border: none;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    /* background-color: red; */
+}
+.number button{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: pink;
+    /* background-color: red; */
+    font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.number select:hover{
+    cursor: pointer;
+}
+.number button:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px pink;
+}
+
+/* 목록리스트 생성 */
+/* .board{
+
+    max-width: 80%;
+    height: 1500px;
+    border: 1px solid black;
+    margin: 0 auto;
+} */
+
+body{
+    position: relative;
+}
+/* 글쓰기 모달창으로 생성 */
+.modal_container{
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+    top: 0;
+    /* background-color: palevioletred; */
+    border: 1px solid pink;
+    border-radius: 4px;
+    box-shadow: 15px 15px 20px 5px rgba(248, 151, 167, 0.6);
+    display: none;
+    background-color: pink;
+}
+#close{
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: pink;
+    position: absolute;
+    right: 0;
+}
+#close:hover{
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(248, 151, 167, 0.6);
+}
+.text_modal h1{
+    font-size: 50px;
+    font-family: "Londrina Shadow", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+.boxs{
+    margin-top: 80px;
+}
+
+.modal_box{
+    width: 100%;
+    max-width: 90%;
+    margin: 10px auto;
+}
+.modal_box span{
+    margin-right: 20px;
+    height: 30px;
+    line-height: 30px;
+    align-items: center;
+}
+.modal_box label{
+    display: flex;
+    justify-content: center;
+}
+.modal_box input{
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+}
+
+.modal_box input:hover{
+    border-color: pink;
+}
+.modal_box input::placeholder{
+    color: #aaa;
+}
+.check{
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    /* background-color: blue; */
+    
+}
+
+#confirm{
+    width: 70px;
+    height: 30px;
+    max-width: 80%;
+    /* background-color: rgb(71, 201, 114); */
+    border-radius: 4px;
+    cursor: pointer;
+}
+#confirm:hover{
+    border-color: pink;
+    color: black;
+    box-shadow: 3px 3px 3px rgba(248, 151, 167, 0.6);
+}
+input{ 
+    cursor: text;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 하단 우측 글쓰기 버튼 생성 */
+.btn_inner{
+    max-width: 90%;
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+.btn{
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: pink;
+    /* background-color: red; */
+    font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px pink;
+}
+/* 목록 페이지 생성 */
+.pagination{
+    max-width: 90%;
+    margin: 20px auto;
+    /* background-color: red; */
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.pagination a{ 
+    margin-left: 20px;
+}
+.pagination:first-child{
+    margin-left: none;
+}
+
+
+
+
+
+
+/* 게시판 목록 구조 */
+.board_table {
+    width: 100%; /* 테이블을 100% 너비로 설정 */
+    margin: 20px auto; /* 상하 여백 설정 */
+}
+thead tr th{
+    background-color: rgba(241, 200, 200, 0.8);
+}
+
+table {
+    height: 1200px;
+    margin: auto;
+    max-width: 80%;
+    /* background-color: pink; */
+    width: 100%; /* 테이블의 너비를 100%로 설정 */
+    border-collapse: collapse; /* 경계 합치기 */
+}
+
+th, td {
+    border: 1px solid #ccc; /* 셀 경계 스타일 */
+    padding: 10px; /* 셀 안쪽 여백 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+th {
+    background-color: #f2f2f2; /* 헤더 배경색 */
+    font-weight: bold; /* 헤더 글씨를 굵게 */
+}
+
+/* 각 열의 너비를 설정 (필요시 조정) */
+.col_number {
+    width: 10%; /* 번호 열의 너비 */
+}
+
+.col_title {
+    width: 60%; /* 제목 열의 너비 */
+}
+
+.col_author {
+    width: 20%; /* 작성자 열의 너비 */
+}
+
+.col_views {
+    width: 10%; /* 조회수 열의 너비 */
+}
+
+#postList{
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 맨위로가기 아이콘 버튼 */
+.up {
+    position: fixed; 
+    bottom: 250px; 
+    left: 90%; 
+    transform: translateX(-50%); 
+    display: none;
+    z-index: 1000;
+} 
+.up.show{
+    display: block;
+}
+.up a{
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%; 
+    padding: 10px; 
+    color: white; 
+    text-align: center; 
+    font-size: 30px;
+}
+
+/* 풋터 */
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(128, 128, 128, 0.3);
+    margin-top: 200px;
+    text-align: center;    
+}
+footer h1{
+    font-size: 30px;
+    line-height: 200px;
+    font-size: 50px;
+    font-weight: 900;
+    font-family: "Londrina Shadow", sans-serif;
+    color: rgb(0, 0, 0,0.5);
+}

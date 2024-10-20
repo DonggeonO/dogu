@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판만들기</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://kit.fontawesome.com/c01b680400.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Noto+Sans+KR:wght@100..900&family=Sixtyfour+Convergence&display=swap" rel="stylesheet"></head>
+
+    
+<body>
+
+    <!-- 배너 생성 -->
+    <header class="banner">
+        <article>
+            <section class="top">
+                
+                <div class="logo">
+                    <a href="./index.html"><span>FAMILY</span></a>
+                </div>
+                <div class="menu-container">
+                    <ul class="menu">
+                        <li><a href="" class="banner_box">HOME</a></li>
+                        <li><a href="" class="banner_box">어서오세요</a></li>
+                        <li><a href="" class="banner_box">가족사진</a></li>
+                        <li><a href="" class="banner_box">게시판</a></li>
+                    </ul>
+                </div>
+                <div class="user-icons">
+                    <ul class="icons">
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-list"></i></a></li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </header>    
+    
+
+    <!-- 게시판 목록 생성 -->
+    
+    <section class="content">
+    <!-- 게시판 제목 -->
+        <h1 class="dong">FAMILY BOARD</h1>
+    <!-- (리스트 상단) (좌측)게시글 수 input / 우측에 글쓰기  버튼 -->
+        <div class="number">
+            <select name="numbers" id="num">
+                <option value="20개씩 보기">20개씩 보기</option>
+                <option value="50개씩 보기">50개씩 보기</option>
+                <option value="100개씩 보기">100개씩 보기</option>
+            </select>
+            <button type="button" id="writePostButton">글쓰기</button>
+        </div>
+
+
+
+    
+
+
+    <!--  게시판 목록 구조  -->
+
+    <div class="board_table">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col" class="col_number">번호</th>
+                    <th scope="col" class="col_title">제목</th>
+                    <th scope="col" class="col_author">작성자</th>
+                    <th scope="col" class="col_views">조회수</th>
+                </tr>
+            </thead>
+            <!-- 게시물 등록 공간 -->
+            <tbody id="postList">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 글쓰기 모달창 으로 생성 -->
+    <article class="modal_container">
+        <button id="close">X</button>
+        <section class="text_modal">
+            <h1>BOARD</h1> 
+            <div class="boxs">
+                <div class="check">
+                <button id="confirm">확인</button>
+                </div>
+                
+                    <div class="modal_box">
+                        <label>
+                            <span>작성자</span>
+                            <input type="text" placeholder="작성자 이름을 입력하세요." >
+                        </label>
+                    </div>
+                    <div class="modal_box">
+                        <label>
+                            <span>글제목</span>
+                            <input type="text" placeholder="게시글 제목을 입력하세요">
+                        </label>
+                    </div>
+                
+            </div>
+        </section>
+    </article>
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- (리스트 하단) 우측에 글쓰기 버튼 -->
+    <div class="btn_inner">
+        <button type="button" class="btn" id="writePostButton">글쓰기</button>
+    </div> 
+    <!-- 목록 페이지 생성 -->
+    <div class="pagination">
+        <a href="#prev" class="page-button">◀ 이전</a>
+        <a href="#1" class="page-button active">1</a>
+        <a href="#2" class="page-button">2</a>
+        <a href="#3" class="page-button">3</a>
+        <a href="#next" class="page-button">다음 ▶</a>
+    </div>
+    </section>
+
+
+    <!-- 맨위로가기 아이콘버튼 생성 (우측) -->
+    <div class="up">
+        <a href="#">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+    </div>
+    
+
+    <!-- 푸터! -->
+    <footer>
+        <div>
+            <h1> END </h1>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
