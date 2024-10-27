@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사다리타기게임</title>
+    <link rel="stylesheet" href="./ladder.css">
+    <script src="https://kit.fontawesome.com/c01b680400.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Noto+Sans+KR:wght@100..900&family=Sixtyfour+Convergence&display=swap" rel="stylesheet"></head>
+</head>
+<body>
+
+    <!-- 기본 배너 -->
+    <header class="banner">
+        <article>
+            <section class="top">
+                
+                <div class="logo">
+                    <a href="./index.html"><span>FAMILY</span></a>
+                </div>
+            
+                <div class="menu-container">
+                    <ul class="menu">
+                        <li><a href="/index.html" class="banner_box">HOME</a></li>
+                        <li><a href="./ladder.html" class="banner_box" >사다리게임</a></li>
+                        <li><a href="#" class="banner_box">가족사진</a></li>
+                        <li><a href="#" class="banner_box">게시판</a></li>
+                    </ul>
+                </div>
+                <div class="user-icons">
+                    <ul class="icons">
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-list"></i></a></li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </header>    
+
+
+
+
+
+
+
+
+
+    <!-- 사다리게임 첫 화면 인원수-->
+    <section id="front">
+        <h1>사다리게임</h1>
+        <div id="user_board">
+            <div>
+                <span>인원수를 설정 하세요.</span>
+                <label id="front_user">
+                    <button  aria-label="인원수 줄이기" class="minus">-</button>
+                    <div id="user">2</div>
+                    <button aria-label="인원수 늘리기" class="plus">+</button>
+                </label>
+            </div>
+            <button type="button" id="ready">READY</button>
+        </div>
+    </section>
+
+    <!-- 사다리타기 결과창 및, 초기화 -->
+    <section id="score">
+        <div class="text">
+            <h1>게임 결과!</h1>
+            <button type="button" id="ScoreClose">X</button>
+        </div>
+        <div id="score_box">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col" class="col_number">번호</th>
+                        <th scope="col" class="col_title">이름</th>
+                        <th scope="col" class="col_author">결과</th>
+                    </tr>
+                </thead>
+                <!-- 게시물 등록 공간 -->
+                <tbody id="user_score">
+                    
+                </tbody>
+            </table>
+    </section>
+    
+
+
+
+
+
+    <!-- 사다리게임 시작 첫화면 (모달)-->
+    <section class="ladder">
+            <h1>게임 시작!</h1>
+        <div id="backgrund">
+            <!-- 유저 박스 -->
+            <div class="user_box">
+                <ul>
+                    <li>
+                        <label class="user_innerbox">
+                            <input type="text" id="us_box" placeholder="이름" >
+                            <!-- 사다리 선  -->
+                            <div class="line_box"></div>
+                        </label>
+                    </li>
+                    <li>    
+                        <label class="user_innerbox">
+                            <input type="text" id="us_box" placeholder="이름">
+                            <!-- 사다리 선  -->
+                            <div class="line_box"></div>
+                        </label>
+                    </li>
+                </ul>
+                <!-- 사다리 선  -->
+                    
+            </div>
+
+        
+            <!-- 당첨 박스 -->
+            <div class="event_box">
+                <ul>
+                    <li>
+                        <label class="event_innerbox">
+                            <input type="text" id="ev_box" placeholder="내용">
+                        </label>
+                    </li>
+                    <li>
+                        <label class="event_innerbox">
+                            <input type="text" id="ev_box" placeholder="내용">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <!-- 이름,당첨내용 작성후 게임 시작 버튼 -->
+            <div id="btn_box">
+                <button type="button" id="back">BACK</button>
+                <button type="button" id="start">STRAT</button>
+                <button type="button" id="next">NEXT</button>
+            </div>
+        </div>
+    </section>
+
+        <!-- 게임 실행중일때 선사이마다 새로운 선이생기면서 게임시작 -->
+        <!-- 게임이 끝난후 하단에 버튼 2개 생성 (다시하기, 결과보기)  -->
+
+    
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!-- 푸터! -->
+    <footer>
+        <div>
+            <h1> END </h1>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <script src="./ladder.js"></script>
+</body>
+</html>
