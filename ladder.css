@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Noto+Sans+KR:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ruge+Boogie&family=Sixtyfour+Convergence&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Londrina+Shadow&family=Noto+Sans+KR:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ruge+Boogie&family=Sixtyfour+Convergence&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+/* 배너생성 */
+.banner{
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    /* background-color: red; */
+    margin: 0 auto;
+    top: 0;
+    border: none;
+}
+.banner > article{
+    max-width: 90%;
+    /* background-color: yellow; */
+    margin: auto;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    height: 90px;
+    width: 190px;
+    line-height: 90px;
+    /* background-color: green; */
+}
+/* 폰트적용시킬자리 */
+.logo a span{
+    font-size: 60px;
+    font-weight: 900;
+    font-family: "Londrina Shadow", sans-serif;
+}
+.menu-container{
+    position: relative;
+}
+.menu {
+    display: flex;
+}
+.menu li a{
+    font-family: "Noto Sans KR", sans-serif;
+    background: url(https://www.naver.com/);
+}
+.menu > li{
+    /* background-color: pink; */
+    height: 90px;
+    line-height: 90px;
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 50px;
+    /* margin-right: 10px; */
+    
+}
+.menu > li:first-child {
+    margin-left: 0;
+}
+.icons{
+    height: 90px;
+    /* background-color: blue; */
+    line-height: 90px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+.icons li a{
+    margin-left: 20px;
+    font-size: 30px;
+}
+.logo a h1{
+    font-size: 30px;
+}
+/* 마우스가 클릭했을때 효과. */
+.top > .logo:hover{
+    text-shadow: 5px 5px hotpink;
+}
+.top > .logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 5px;
+    background-color: pink;
+    transform: scale(0);
+    transition: transform 0.3s;
+}
+    .top:hover > .logo::after {
+    transform: scale(1);
+}
+.logo a:hover{
+    color: pink;
+    
+}
+.menu li a:hover{
+    color: pink;
+    text-shadow: 3px 3px hotpink;
+}
+.icons > li:first-child:hover{
+    color: pink;
+    text-shadow: 3px 3px hotpink;
+}
+.icons > li:last-child:hover{
+    color: pink;
+    text-shadow: 3px 3px hotpink;
+}
+
+
+
+
+
+/* 사다리게임 첫 화면 인원수 */
+#front{
+    width: 600px;
+    height: 700px;
+    border: 1px solid pink;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 10px 10px 40px 5px pink;
+}
+#user_board{
+    position: relative;
+    top: 30%;
+    transform: translate(0,-30%);
+}
+#front h1{
+    background-color: pink;
+    padding: 30px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+#front span{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#front_user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+}
+#front_user button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 20px;
+}
+#user{
+    font-size: 20px;
+    font-weight: bold;
+}
+#front_user button{
+    background-color: rgb(255, 192, 203, 0.5);
+}
+
+#ready{
+    width: 100px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 50px;
+    background-color: rgb(255, 192, 203, 0.5);
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+#front_user > button:hover{
+    cursor: pointer;
+}
+#ready:hover{
+    cursor: pointer;
+}
+input:focus{
+    outline: none;
+    
+}
+textarea:focus{
+    outline: none;
+}
+div:focus{
+    outline: none;
+}
+
+
+
+
+
+
+/* 사다리게임 결과 창 (모달창) */
+#score{
+    width: 800px;
+    height: 1000px;
+    border: 1px solid pink;
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,20%);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 10px 10px 40px 5px pink;
+    overflow: hidden;
+    background-color: white;
+    display: none;
+}
+
+.text{
+    background-color: pink;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.text button{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: unset;
+    border: none;
+    right: 1%;
+    top: 1%;
+    font-size: 30px;
+}
+.text button:hover{
+    cursor: pointer;
+}
+#score_box{
+    width: 100%;
+    margin-top: 40px;
+}
+table{
+    margin: auto;
+    border-collapse: collapse;
+    font-family: "Noto Sans KR", sans-serif;
+}
+th, td {
+    border: 1px solid #ccc; /* 셀 경계 스타일 */
+    padding: 10px; /* 셀 안쪽 여백 */
+    text-align: center; /* 중앙 정렬 */
+}
+.col_number {
+    width: 100px; /* 번호 열의 너비 */
+}
+
+.col_title {
+    width: 350px; /* 제목 열의 너비 */
+}
+
+.col_author {
+    width: 350px; /* 작성자 열의 너비 */
+}
+
+
+
+
+
+
+/* 사다리 게임 진행 모달창 */
+.ladder{
+    width: 80vw;
+    height: 800px;
+    background-color: pink;
+    border: 1px solid pink;
+    position: relative;
+    top: 20%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, 20%);
+    display: none;
+    box-shadow: 10px 10px 40px 5px pink;
+}
+.ladder h1{
+    width: 80vw;
+    height: 50px;
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+#backgrund{
+    width: 80vw;
+    height: 100%;
+    background-color: white;
+    padding:10px;
+}
+.user_box{
+    width: 80vw;
+    text-align: center;
+    /* background-color: red; */
+    position: relative;
+    top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+}
+.user_box ul{
+    display: flex;
+}
+.user_innerbox{
+    position: relative;
+    width: 80px;
+}
+.user_innerbox input{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+}
+.user_innerbox input:first-child{
+    margin-right: 20px;
+}
+
+.event_box{
+    width: 80vw;
+    text-align: center;
+    /* background-color: blue; */
+    position: absolute;
+    bottom: 15%;
+}
+.event_innerbox input{
+    width: 70px;
+    height: 30px;
+    text-align: center;
+}
+.event_innerbox input:first-child{
+    margin-right: 20px;
+}
+
+#btn_box{
+    width: 80vw;
+    /* background-color: red; */
+    position: absolute;
+    bottom: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.event_box ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#start{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ccc;
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #0095ff;
+}
+#next{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ccc;
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #0095ff;
+}
+#back{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ccc;
+    font-family: "Londrina Shadow", sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #0095ff;
+}
+#start:hover{
+    cursor: pointer;
+    background-color: pink;
+}
+#back:hover{
+    cursor: pointer;
+    background-color: pink;
+}
+#next:hover{
+    cursor: pointer;
+    background-color: pink;
+}
+
+.line_box{
+    height: 480px;
+    position: absolute;
+    left: 40px;
+    transform: translate(0,2%);
+    border: 2px solid black;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid pink;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+/* 풋터 */
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(128, 128, 128, 0.3);
+    margin-top: 200px;
+    text-align: center;  
+    
+}
+footer h1{
+    font-size: 30px;
+    line-height: 200px;
+    font-size: 50px;
+    font-weight: 900;
+    font-family: "Londrina Shadow", sans-serif;
+    color: rgb(0, 0, 0,0.5);
+}
